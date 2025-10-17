@@ -11,6 +11,7 @@ let ErrorMessage = document.querySelector('.ErrorMsg')
 let Loader = document.querySelector('.loader')
 let LoadText = document.querySelector('.text')
 ErrorMessage.innerHTML = ''
+
 // -------------Images Map
 let MapImages = (images) =>{
     images.map((item) =>{
@@ -72,3 +73,55 @@ let HandelSearch = () =>{
     GetImages(`https://api.pexels.com/v1/search?query=${SearchInput.value}&page=${CurrentPage}&per_page=${PerPage}`)
 
 }
+
+// -------------- Lightbox Feature --------------
+const lightbox = document.querySelector('#lightbox');
+const lightboxImg = document.querySelector('#lightbox-img');
+const closeBtn = document.querySelector('.lightbox .close');
+const nextBtn = document.querySelector('.lightbox .next');
+const prevBtn = document.querySelector('.lightbox .prev');
+
+let currentIndex = 0;
+
+// function to open lightbox
+function openLightbox(index) {
+  const images = document.querySelectorAll('#image img');
+  currentIndex = index;
+  lightboxImg.src = images[index].src;
+  lightbox.classList.add('active');
+}
+
+// function to close lightbox
+function closeLightbox() {
+  lightbox.classList.remove('active');
+}
+
+// next / prev
+function showNext() {
+  const images = document.querySelectorAll('#image img');
+  currentIndex = (currentIndex + 1) % images.length;
+  lightboxImg.src = images[currentIndex].src;
+}
+function showPrev() {
+  const images = document.querySelectorAll('#image img');
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  lightboxImg.src = images[currentIndex].src;
+}
+
+// events
+closeBtn.addEventListener('click', closeLightbox);
+nextBtn.addEventListener('click', showNext);
+prevBtn.addEventListener('click', showPrev);
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+// rebind after images load
+const originalMapImages = MapImages;
+MapImages = (images) => {
+  originalMapImages(images);
+  const allImgs = document.querySelectorAll('#image img');
+  allImgs.forEach((img, i) => {
+    img.addEventListener('click', () => openLightbox(i));
+  });
+};
