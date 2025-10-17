@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div id="poda">
+            <div class="glow"></div>
+            <div class="darkBorderBg"></div>
+            <div class="darkBorderBg"></div>
+            <div class="darkBorderBg"></div>
+            <div class="white"></div>
+            <div class="border"></div>
+            <div id="main">
+                <input placeholder="Search Your Image..." type="text" name="text" class="input" />
+                <div id="pink-mask"></div>
+                <div class="filterBorder"></div>
+                <button id="filter-icon" onclick="HandelSearch()">
+                    Search
+                </button>
+                <div id="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2"
+                        stroke-linejoin="round" stroke-linecap="round" height="24" fill="none"
+                        class="feather feather-search">
+                        <circle stroke="url(#search)" r="8" cy="11" cx="11"></circle>
+                        <line stroke="url(#searchl)" y2="16.65" y1="22" x2="16.65" x1="22"></line>
+                        <defs>
+                            <linearGradient gradientTransform="rotate(50)" id="search">
+                                <stop stop-color="#f8e7f8" offset="0%"></stop>
+                                <stop stop-color="#b6a9b7" offset="50%"></stop>
+                            </linearGradient>
+                            <linearGradient id="searchl">
+                                <stop stop-color="#b6a9b7" offset="0%"></stop>
+                                <stop stop-color="#837484" offset="50%"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- -------------Image Section------------ -->
+    <section id="image">
+    </section>
+    <h1 class="ErrorMsg">Sorry we couldn't find the image</h1>
+    <!-- ---------- --View More Button--------- -->
+    <div class="View_more">
+        <button class="ShineButton">
+                View More Images
+                <div class="star-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
+                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                        viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                            <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                            <path class="fil0"
+                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="star-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
+                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                        viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                            <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                            <path class="fil0"
+                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="star-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
+                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                        viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                            <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                            <path class="fil0"
+                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="star-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
+                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                        viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                            <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                            <path class="fil0"
+                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="star-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
+                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                        viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                            <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                            <path class="fil0"
+                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="star-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
+                        style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                        viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs></defs>
+                        <g id="Layer_x0020_1">
+                            <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                            <path class="fil0"
+                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+        </button>
+    </div>
+    <!-- ---------Loader ----------  -->
+     <div class="loader">
+        <div id="wifi-loader">
+            <svg class="circle-outer" viewBox="0 0 86 86">
+                <circle class="back" cx="43" cy="43" r="40"></circle>
+                <circle class="front" cx="43" cy="43" r="40"></circle>
+                <circle class="new" cx="43" cy="43" r="40"></circle>
+            </svg>
+            <svg class="circle-middle" viewBox="0 0 60 60">
+                <circle class="back" cx="30" cy="30" r="27"></circle>
+                <circle class="front" cx="30" cy="30" r="27"></circle>
+            </svg>
+            <svg class="circle-inner" viewBox="0 0 34 34">
+                <circle class="back" cx="17" cy="17" r="14"></circle>
+                <circle class="front" cx="17" cy="17" r="14"></circle>
+            </svg>
+            <div class="text" data-text="Searching"></div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
