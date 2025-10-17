@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Calculator</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="container">
+  <div class="munna main">
+    <div class="munna wrap">
+      <div class="munna cal-bg">
+        <div class="munna cal">
+          <ul class="munna ctrls">
+            <li class="munna close"><a target="_blank" href="https://www.instagram.com/rexon.notfr"></a></li>
+            <li class="munna min"><a target="_blank" href="https://www.instagram.com/rexon.notfr"></a></li>
+            <li class="munna max"><a target="_blank" href="https://www.instagram.com/rexon.notfr"></a></li>
+          </ul>
+          <span class="munna title">Calculator</span>
+          <div class="munna screen result"></div>
+          <input type="hidden" class="munna outcome" value="2+2" />
+          <ul class="munna buttons">
+            <li><a class="clear" onclick="ClearDisplay()">C</a></li>
+            <li><a class="val" onclick="DisplayResult('/')">&divide;</a></li>
+            <li><a class="val" onclick="DisplayResult('*')">&times;</a></li>
+            <li><a class="val" onclick="DisplayResult('7')">7</a></li>
+            <li><a class="val" onclick="DisplayResult('8')">8</a></li>
+            <li><a class="val" onclick="DisplayResult('9')">9</a></li>
+            <li><a class="val" onclick="DisplayResult('-')">-</a></li>
+            <li><a class="val" onclick="DisplayResult('4')">4</a></li>
+            <li><a class="val" onclick="DisplayResult('5')">5</a></li>
+            <li><a class="val" onclick="DisplayResult('6')">6</a></li>
+            <li><a class="val" onclick="DisplayResult('+')">+</a></li>
+            <li><a class="val" onclick="DisplayResult('1')">1</a></li>
+            <li><a class="val" onclick="DisplayResult('2')">2</a></li>
+            <li><a class="val" onclick="DisplayResult('3')">3</a></li>
+            <li><a class="equal tall" onclick="Calculate()">=</a></li>
+            <li><a class="val wide shift" onclick="DisplayResult('0')">0</a></li>
+            <li><a class="val shift" onclick="DisplayResult('.')">.</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
